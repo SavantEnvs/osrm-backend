@@ -1,0 +1,9 @@
+project: savantenvs/osrm-backend
+target: tile_parameters
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/tile_parameters/testsuite
+cmds:
+  - cmd: /mayhem/_build-fuzz/harness/tile_parameters
+    libfuzzer: true
+    timeout: 10

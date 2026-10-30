@@ -1,0 +1,9 @@
+project: savantenvs/osrm-backend
+target: nearest_parameters
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/nearest_parameters/testsuite
+cmds:
+  - cmd: /mayhem/_build-fuzz/harness/nearest_parameters
+    libfuzzer: true
+    timeout: 10

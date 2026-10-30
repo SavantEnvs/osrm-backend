@@ -1,0 +1,9 @@
+project: savantenvs/osrm-backend
+target: request_parser
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/request_parser/testsuite
+cmds:
+  - cmd: /mayhem/_build-fuzz/harness/request_parser
+    libfuzzer: true
+    timeout: 10

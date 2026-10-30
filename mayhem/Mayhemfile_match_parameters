@@ -1,0 +1,9 @@
+project: savantenvs/osrm-backend
+target: match_parameters
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/match_parameters/testsuite
+cmds:
+  - cmd: /mayhem/_build-fuzz/harness/match_parameters
+    libfuzzer: true
+    timeout: 10

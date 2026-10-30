@@ -1,0 +1,9 @@
+project: savantenvs/osrm-backend
+target: escape_json
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/escape_json/testsuite
+cmds:
+  - cmd: /mayhem/_build-fuzz/harness/escape_json
+    libfuzzer: true
+    timeout: 10
